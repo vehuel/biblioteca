@@ -91,7 +91,6 @@ var clsRequisicao = function(Url, Webservice) {
         var oPar =  { url:sUrl + (bWeb ? op:''), type:'POST' };  // Parametros padrão
         if (!bWeb) par.data = 'Operacao=' + op + (par.data == '' ? '':'&') + par.data;
         $.extend(oPar, par);                    // Copia/sobrescreve as opções padrão, pelas opções informadas pelo usuário
-        $().log(oPar);
         $.ajax(oPar);                           // Faz a requisição
     }
 
