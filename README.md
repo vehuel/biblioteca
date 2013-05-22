@@ -47,3 +47,12 @@ Para resolver isso é molezinha, coloque a linha abaixo na sua página HTML que 
 try { var x = typeof JSON.stringify; } catch(x) { $.getScript("/scripts/json2.min.js"); }
 ```  
 *Não se esqueça de alterar o caminho do script json2.*
+
+* **Para que server o parâmetro *Webservice* do "construtor" da classe?**  
+O padrão desse parâmetro (Caso você não informe, como nos exemplos anteriores) é *true*.  
+Caso você defina como false ele enviaria, no exemplo abaixo, os seguintes dados: *Operacao=Envia&Nome=Victor*
+```
+var fPost = new clsRequisicao("http://www.abc.com/webser.ashx")
+fPost.p("Envia", "Nome=Victor", function(Dados) { });
+```
+Perceba que ele adicionou um parâmetro extra chamado *Operacao*. No ashx basta você dar o tratamento adequado.
